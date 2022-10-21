@@ -83,7 +83,7 @@ public class App {
     }
     public static int randomNumberBetweenOneAndHundred() {
         Random rand = new Random();
-        return rand.nextInt(100) + 1; // pentru ca este exkl., merge de la 0 la 99de aceea +1
+        return rand.nextInt(100) + 1;
     }
 
 
