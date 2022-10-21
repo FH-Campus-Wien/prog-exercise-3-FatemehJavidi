@@ -4,6 +4,24 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class App {
+    // todo 1
+    public static void oneMonthCalendar(int days,int firstDay) {
+        for (int a = 1; a < 3 * firstDay - 2; a++)
+            System.out.print(" ");
+
+        int b;
+        for (b = 1; b <= days; b++) {
+            int length = String.valueOf(b).length();
+            if (length == 1)
+                System.out.print(" ");
+            System.out.print(b + " ");
+            if ((b + firstDay - 1) % 7 == 0)
+                System.out.println();
+        }
+        b--; //
+        if ((b + firstDay - 1) % 7 != 0)
+            System.out.println();
+    }
 
     public static long[] lcg(long firstNumber) {
         long nextNumber;
@@ -21,6 +39,22 @@ public class App {
         }
         System.out.println();
         return numbers;
+    }
+    // todo 4
+    public static boolean swapArrays(int array1[], int aray2[]) {
+        int length1 = array1.length;
+        int length2 = aray2.length;
+
+        if (length1 != length2)
+            return false;
+
+        int aux[] = new int[length1];
+        for(int a = 0; a < length1; a++) {
+            aux[a] = array1[a];
+            array1[a] = aray2[a];
+            aray2[a] = aux[a];
+        }
+        return true;
     }
 
     public static void guessingGame(int numberToGuess) {
@@ -53,21 +87,6 @@ public class App {
     }
 
 
-    public static boolean swapArrays(int arrayy1[], int array2[]) {
-        int length1 = arrayy1.length; // dimensiunea array
-        int length2 = array2.length;
-
-        if (length1 != length2)
-            return false;
-
-        int aux[] = new int[length1];
-        for(int a = 0; a < length1; a++) {
-            aux[a] = arrayy1[a]; // 1
-            arrayy1[a] = array2[a]; // 2 e salvat in 1
-            array2[a] = aux[a]; // 1 e salvat in 2
-        }
-        return true;
-    }
 
     //Task 6
     public static void main(String[] args) {
